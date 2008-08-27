@@ -21,14 +21,23 @@ namespace :cache do
 end
 
 namespace :specs do
+  desc "runs all of the spec files located in spec/"
   task :run do
+    # TODO
+    # fix so that specs are loaded
+    # based on whatever is in the 
+    # directory (including sub-directories)
+    # based on the _spec.rb$ regex
     specs = [
       'bones_spec.rb',
+      'boot_spec.rb',
+      'cache_spec.rb',
+      'extensions_spec.rb',
       'helpers/core_helper_spec.rb'
     ]
   
     specs.each do |f|
-      puts "\n** Executing #{f}"
+      puts "** Executing #{f}"
       # TODO
       # fix so that specs can be
       # executed from within either

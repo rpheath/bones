@@ -9,6 +9,8 @@ def force_const(const, val)
   Object.const_set(const, val)
 end
 
+# adjust constants initially so it sees the
+# factory as the default place for executing specs
 force_const :ROOT,    File.expand_path(File.dirname(__FILE__) + '/factory')
 force_const :PAGES,   File.join(ROOT, 'pages')
 force_const :LAYOUTS, File.join(ROOT, 'layouts')
