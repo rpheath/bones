@@ -46,8 +46,7 @@ module CoreHelper
     def stylesheet_link_tag(*sources)
       return nil if sources.empty?
       options = Hash === sources.last ? sources.pop : {}
-      result  = sources.map { |e| stylesheet_tag(e, options) }
-      result.join("\n")
+      sources.collect { |e| stylesheet_tag(e, options) }.join("\n")
     end
   
     # Creates a stylesheet link tag
